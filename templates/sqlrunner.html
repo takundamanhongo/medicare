@@ -1,0 +1,24 @@
+
+{% extends "appbuilder/base.html" %}
+{% block content %}
+<div class="container">
+    <h2>Run Custom SQL Query</h2>
+    <p class="text-danger">Warning: Be careful with UPDATE, INSERT, DELETE queries!</p>
+
+    <form method="POST" action="/sqlrunner/">
+        <div class="form-group">
+            <textarea name="sql_query" class="form-control" rows="5" placeholder="Enter SQL query..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Execute</button>
+        <a href="/dashboard" class="btn btn-default">Cancel</a>
+    </form>
+
+    <hr>
+    <h4>Example Queries:</h4>
+    <ul>
+        <li>SELECT * FROM patient LIMIT 10;</li>
+        <li>SELECT COUNT(*) FROM appointment WHERE status = 'Completed';</li>
+        <li>SELECT d.dept_name, COUNT(doc.person_id) as doctor_count FROM department d LEFT JOIN doctor doc ON d.dept_id = doc.dept_id GROUP BY d.dept_id;</li>
+    </ul>
+</div>
+{% endblock %}

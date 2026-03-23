@@ -1,0 +1,53 @@
+
+{% extends "appbuilder/base.html" %}
+{% block content %}
+<div class="container">
+    <h1>Hospital Management System</h1>
+    <p class="lead">Welcome, {{ current_user.username }}!</p>
+
+    <div class="row">
+        <div class="col-md-3">
+            <div class="panel panel-primary">
+                <div class="panel-heading">Patients</div>
+                <div class="panel-body text-center"><h2>{{ stats.patients }}</h2></div>
+                <div class="panel-footer"><a href="/patientview/list">View</a></div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="panel panel-success">
+                <div class="panel-heading">Doctors</div>
+                <div class="panel-body text-center"><h2>{{ stats.doctors }}</h2></div>
+                <div class="panel-footer"><a href="/doctorview/list">View</a></div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="panel panel-info">
+                <div class="panel-heading">Nurses</div>
+                <div class="panel-body text-center"><h2>{{ stats.nurses }}</h2></div>
+                <div class="panel-footer"><a href="/nurseview/list">View</a></div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="panel panel-warning">
+                <div class="panel-heading">Appointments</div>
+                <div class="panel-body text-center"><h2>{{ stats.appointments }}</h2></div>
+                <div class="panel-footer"><a href="/appointmentview/list">View</a></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">Quick Actions</div>
+                <div class="panel-body">
+                    <a href="/patientview/add" class="btn btn-primary">Add Patient</a>
+                    <a href="/doctorview/add" class="btn btn-success">Add Doctor</a>
+                    <a href="/appointmentview/add" class="btn btn-info">Add Appointment</a>
+                    <a href="/sqlrunner" class="btn btn-danger">Run SQL Query</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
