@@ -9,7 +9,7 @@ import os
 # SQLite database file
 DB_PATH = "hospitalmanagementsystem_final.db"
 
-# Your MySQL schema converted to SQLite
+#MySQL schema converted to SQLite
 schema_sqlite = """
 -- =====================================================
 -- HOSPITAL MANAGEMENT SYSTEM - SQLITE VERSION
